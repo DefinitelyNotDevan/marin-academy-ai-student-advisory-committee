@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
@@ -15,12 +16,16 @@ export function SiteNav() {
   return (
     <nav className="sticky top-0 z-50 h-[72px] bg-[#0a0a0a] border-b border-white/10">
       <div className="w-[min(1140px,100%-2.5rem)] mx-auto h-full flex items-center justify-between gap-8">
-        {/* Brand */}
-        <Link href="/" className="flex items-center gap-3 text-white">
-          <div className="leading-tight">
-            <div className="font-semibold text-sm">AI Advisory Committee</div>
-            <div className="text-white/50 text-xs">Marin Academy</div>
-          </div>
+        {/* Brand — MA logo */}
+        <Link href="/" className="flex items-center gap-3 shrink-0">
+          <Image
+            src="/images/ma-logo.png"
+            alt="Marin Academy"
+            width={120}
+            height={22}
+            className="h-[22px] w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Links */}
@@ -32,7 +37,7 @@ export function SiteNav() {
                 className={cn(
                   "text-sm font-medium transition-colors",
                   pathname === href
-                    ? "text-red-400"
+                    ? "text-[#BE2828]"
                     : "text-white/70 hover:text-white"
                 )}
               >

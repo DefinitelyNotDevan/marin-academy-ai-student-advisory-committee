@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { SiteNav }    from "@/components/ui/site-nav";
-import { SiteFooter } from "@/components/ui/site-footer";
+import { SiteNav }       from "@/components/ui/site-nav";
+import { SiteFooter }    from "@/components/ui/site-footer";
+import { ContactWidget } from "@/components/ui/contact-widget";
 
 export const metadata: Metadata = {
   title: "AI Student Advisory Committee – Marin Academy",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <SiteNav />
         <main>{children}</main>
         <SiteFooter />
+        <ContactWidget />
       </body>
     </html>
   );
