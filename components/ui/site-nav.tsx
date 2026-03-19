@@ -18,7 +18,7 @@ export function SiteNav() {
         {/* Brand */}
         <Link href="/" className="flex items-center gap-3 text-white">
           <div className="leading-tight">
-            <div className="font-semibold text-sm font-['Space_Grotesk']">AI Advisory Committee</div>
+            <div className="font-semibold text-sm">AI Advisory Committee</div>
             <div className="text-white/50 text-xs">Marin Academy</div>
           </div>
         </Link>
