@@ -40,28 +40,13 @@ export function ContactWidget() {
 
   return (
     <>
-      {/* FAB */}
-      <button
-        onClick={() => setOpen((o) => !o)}
-        aria-label="Open contact form"
-        aria-expanded={open}
-        className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full px-5 py-3 text-sm font-semibold text-white shadow-lg transition-all hover:scale-105 active:scale-95"
-        style={{ backgroundColor: "#BE2828" }}
-      >
-        <svg width="16" height="16" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-          <rect x="1" y="3" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.6"/>
-          <path d="M1 5.5l8 5 8-5" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/>
-        </svg>
-        Contact Us
-      </button>
-
-      {/* Panel */}
+      {/* Panel — opened via ContactButton dispatching "open-contact" event */}
       {open && (
         <div
           role="dialog"
           aria-modal="true"
           aria-label="Contact form"
-          className="fixed bottom-20 right-6 z-50 w-[340px] rounded-2xl bg-white shadow-2xl border border-gray-200 overflow-hidden"
+          className="fixed bottom-8 right-8 z-50 w-[340px] rounded-2xl bg-white shadow-2xl border border-gray-200 overflow-hidden"
         >
           {/* Header */}
           <div className="flex items-start justify-between px-5 py-4 border-b border-gray-100">
