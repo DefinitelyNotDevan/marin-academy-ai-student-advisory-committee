@@ -1,6 +1,5 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   /* Enable static HTML export so the site can be hosted on GitHub Pages */
   output: "export",
 };
