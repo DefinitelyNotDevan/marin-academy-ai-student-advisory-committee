@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ContactButton } from "@/components/ui/contact-button";
+import { img } from "@/lib/img-path";
 
 /* ─── Types ─────────────────────────────────────────────────── */
 type BadgeVariant = "past" | "next" | "upcoming" | "alumni";
@@ -31,7 +32,7 @@ const speakers: Speaker[] = [
     badgeVariant: "past",
     bio: "Michael is a graduate student at UC Berkeley's Goldman School of Public Policy and founder of Building A Sustainable Internet — the world's first undergraduate-taught course on sustainable digital infrastructure. He serves on the California Public Utilities Commission and has presented internationally on the hidden environmental costs of AI and the internet.",
     tags: ["Energy & Data Centers", "Policy", "Sustainability"],
-    photo: "/images/michael-brand.png",
+    photo: img("/images/michael-brand.png"),
   },
   {
     initials: "BR",
@@ -43,6 +44,7 @@ const speakers: Speaker[] = [
     badgeVariant: "past",
     bio: "A Marin Academy alumna beginning her Ph.D. at the University of Cambridge, Bella studies the intersection of conflict mineral supply chains and AI hardware infrastructure. Her work examines the community impacts of resource extraction on communities affected by the production of AI's physical components — an often invisible dimension of how AI is built.",
     tags: ["Supply Chains", "Global Justice", "MA Alum '20"],
+    photo: img("/images/bella-raja.jpg"),
   },
   {
     initials: "LC",
@@ -55,7 +57,7 @@ const speakers: Speaker[] = [
     bio: "Lauren Chambers is a researcher at UC Berkeley whose work sits at the crossroads of technology, social justice, and government policy. Her research explores how AI and data systems interact with governance structures — and who benefits, and who is harmed, when these systems make decisions that affect people's lives.",
     tags: ["Social Justice", "Government & Policy", "Equity"],
     highlight: true,
-    photo: "/images/lauren-chambers.jpg",
+    photo: img("/images/lauren-chambers.jpg"),
   },
   {
     initials: "ML",
@@ -67,6 +69,7 @@ const speakers: Speaker[] = [
     badgeVariant: "alumni",
     bio: "Michael graduated from Marin Academy in 2021 and went on to earn a B.S. in Applied Math–CS and an M.S. in Computer Science from Brown University. He's now a Software Engineer at NVIDIA specializing in simulation and model evaluation for autonomous vehicle development. He'll share the real path from MA to a career at the center of the AI revolution.",
     tags: ["Autonomous Vehicles", "Software Engineering", "MA Alum '21"],
+    photo: img("/images/michael-lu.jpg"),
   },
   {
     initials: "MF",
@@ -78,7 +81,7 @@ const speakers: Speaker[] = [
     badgeVariant: "upcoming",
     bio: "Matt Flannery is the CEO and founder of Branch.co and co-founder of Kiva.org. Branch uses machine learning to assess creditworthiness via smartphone data, serving borrowers in India, Nigeria, and Kenya. He'll discuss how algorithmic lending works in practice, why transparency matters when AI makes financial decisions, and what 'fair' looks like in automated systems.",
     tags: ["FinTech", "Machine Learning", "Global Markets"],
-    photo: "/images/matt-flannery.jpg",
+    photo: img("/images/matt-flannery.jpg"),
   },
   {
     initials: "AI",
@@ -90,7 +93,7 @@ const speakers: Speaker[] = [
     badgeVariant: "alumni",
     bio: "Ava is a product engineer and MA '20 alumna specializing in human-centered design and emerging technology. She holds a B.S./M.S. in Human Factors Engineering from Tufts University. As an Associate Product Manager at UCSF's Dyslexia Center, she leads a statewide platform for K–12 dyslexia screening and intervention — using AI to make neuroscience research accessible to classrooms across California.",
     tags: ["Human-Centered Design", "AI in Education", "MA Alum '20"],
-    photo: "/images/ava-iannuccillo.jpg",
+    photo: img("/images/ava-iannuccillo.jpg"),
   },
 ];
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { img } from "@/lib/img-path";
 
 const links = [
   { href: "/",         label: "Home" },
@@ -19,7 +20,7 @@ export function SiteNav() {
         {/* Brand — MA logo */}
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <Image
-            src="/images/ma-logo.svg"
+            src={img("/images/ma-logo.svg")}
             alt="Marin Academy"
             width={44}
             height={44}
