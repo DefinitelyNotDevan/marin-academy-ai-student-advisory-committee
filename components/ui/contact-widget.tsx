@@ -1,10 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const CONTACT_EMAIL = "rmansfield@ma.org";
 
 export function ContactWidget() {
   const [open, setOpen]         = useState(false);
+
+  // Allow any page to open the widget by dispatching: new CustomEvent("open-contact")
+  useEffect(() => {
+    const handler = () => setOpen(true);
+    window.addEventListener("open-contact", handler);
+    return () => window.removeEventListener("open-contact", handler);
+  }, []);
   const [sent, setSent]         = useState(false);
   const [name, setName]         = useState("");
   const [email, setEmail]       = useState("");

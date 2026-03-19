@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { ContactButton } from "@/components/ui/contact-button";
 
 /* ─── Types ─────────────────────────────────────────────────── */
 type BadgeVariant = "past" | "next" | "upcoming" | "alumni";
@@ -203,9 +204,9 @@ export default function SpeakersPage() {
             Are you an MA alumnus working in AI or a researcher interested in visiting? We'd love to hear from you.
           </p>
           <div className="flex gap-3 justify-center flex-wrap">
-            <Link href="/about" className="rounded-full bg-[#BE2828] hover:bg-[#a82323] text-white font-semibold px-6 py-3 text-sm transition-colors">
+            <ContactButton className="rounded-full bg-[#BE2828] hover:bg-[#a82323] text-white font-semibold px-6 py-3 text-sm transition-colors">
               Contact the Committee
-            </Link>
+            </ContactButton>
             <Link href="/" className="rounded-full border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3 text-sm transition-colors">
               Back to Home
             </Link>
