@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;   /* white */
+    --foreground: 0 0% 7%;     /* near-black */
+
+    /* Marin Academy brand */
+    --ma-red:     220 38 38;   /* #dc2626 */
+    --ma-navy:    10 10 10;    /* #0a0a0a */
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply bg-white text-[#111] font-body antialiased leading-relaxed;
+  }
+}
