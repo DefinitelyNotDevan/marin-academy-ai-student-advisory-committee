@@ -9,7 +9,7 @@ export default function AboutPage() {
           <span className="inline-block text-xs font-semibold uppercase tracking-widest text-red-400 mb-4">
             Who We Are
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold font-['Space_Grotesk'] mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
             About the AI Advisory Committee
           </h1>
           <p className="text-white/70 text-lg max-w-2xl">
@@ -26,7 +26,7 @@ export default function AboutPage() {
             {/* Left: text */}
             <div>
               <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Our Purpose</span>
-              <h2 className="text-3xl md:text-4xl font-bold font-['Space_Grotesk'] mt-3 mb-5">
+              <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-5">
                 Students Thinking Critically About AI
               </h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
@@ -88,7 +88,7 @@ export default function AboutPage() {
         <div className="w-[min(1140px,100%-2.5rem)] mx-auto">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Our Work</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-['Space_Grotesk'] mt-2 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-3">
               What the Committee Does
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
@@ -121,7 +121,7 @@ export default function AboutPage() {
         <div className="w-[min(1140px,100%-2.5rem)] mx-auto">
           <div className="text-center mb-12">
             <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Why It Matters</span>
-            <h2 className="text-3xl md:text-4xl font-bold font-['Space_Grotesk'] mt-2 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-3">
               The Questions We're Exploring
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
@@ -151,7 +151,7 @@ export default function AboutPage() {
         <div className="w-[min(720px,100%-2.5rem)] mx-auto">
           <div className="text-center mb-10">
             <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Get Involved</span>
-            <h2 className="text-3xl font-bold font-['Space_Grotesk'] mt-2 mb-3">Join the Conversation</h2>
+            <h2 className="text-3xl font-bold mt-2 mb-3">Join the Conversation</h2>
             <p className="text-gray-500">
               Whether you want to attend a talk, join the committee, or propose a speaker — we want to hear from you.
             </p>

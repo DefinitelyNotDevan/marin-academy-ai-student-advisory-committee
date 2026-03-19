@@ -14,7 +14,6 @@ interface Speaker {
   badgeVariant: BadgeVariant;
   bio: string;
   tags: string[];
-  photo?: string;
   highlight?: boolean;
 }
 
@@ -86,7 +85,6 @@ const speakers: Speaker[] = [
     badgeVariant: "alumni",
     bio: "Ava is a product engineer and MA '20 alumna specializing in human-centered design and emerging technology. She holds a B.S./M.S. in Human Factors Engineering from Tufts University. As an Associate Product Manager at UCSF's Dyslexia Center, she leads a statewide platform for K–12 dyslexia screening and intervention — using AI to make neuroscience research accessible to classrooms across California.",
     tags: ["Human-Centered Design", "AI in Education", "MA Alum '20"],
-    photo: "/images/ava-iannuccillo.jpg",
   },
 ];
 
@@ -108,7 +106,7 @@ export default function SpeakersPage() {
           <span className="inline-block text-xs font-semibold uppercase tracking-widest text-red-400 mb-4">
             Spring 2026
           </span>
-          <h1 className="text-4xl md:text-6xl font-bold font-['Space_Grotesk'] mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">
             AI Speaker Series
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mb-8">
@@ -123,7 +121,7 @@ export default function SpeakersPage() {
             ].map((tag) => (
               <span
                 key={tag}
-                className="bg-white/8 text-white/70 px-4 py-1.5 rounded-full text-sm font-medium"
+                className="bg-white/10 text-white/70 px-4 py-1.5 rounded-full text-sm font-medium"
               >
                 {tag}
               </span>
@@ -139,7 +137,7 @@ export default function SpeakersPage() {
             <span className="text-xs font-semibold uppercase tracking-widest text-red-600">
               Confirmed Speakers
             </span>
-            <h2 className="text-3xl md:text-4xl font-bold font-['Space_Grotesk'] mt-2 mb-3">
+            <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-3">
               Meet the Speakers
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
@@ -158,20 +156,9 @@ export default function SpeakersPage() {
               >
                 {/* Card header */}
                 <div className="flex items-start gap-3 p-5 pb-0">
-                  {s.photo ? (
-                    <Image
-                      src={s.photo}
-                      alt={s.name}
-                      width={48}
-                      height={48}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-gray-100 shrink-0"
-                      onError={() => {}}
-                    />
-                  ) : (
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-600 to-red-400 grid place-items-center text-white font-bold text-sm shrink-0">
-                      {s.initials}
-                    </div>
-                  )}
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-red-600 to-red-400 grid place-items-center text-white font-bold text-sm shrink-0">
+                    {s.initials}
+                  </div>
                   <div className="min-w-0 flex-1">
                     <div className="font-semibold text-[#111]">{s.name}</div>
                     <div className="text-gray-500 text-xs">{s.org}</div>
@@ -214,7 +201,7 @@ export default function SpeakersPage() {
         <div className="w-[min(780px,100%-2.5rem)] mx-auto">
           <div className="text-center mb-10">
             <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Featured Speaker</span>
-            <h2 className="text-3xl font-bold font-['Space_Grotesk'] mt-2">Spotlight: Ava Iannuccillo '20</h2>
+            <h2 className="text-3xl font-bold mt-2">Spotlight: Ava Iannuccillo '20</h2>
           </div>
 
           <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-200">
@@ -272,7 +259,7 @@ export default function SpeakersPage() {
       {/* CTA */}
       <section className="bg-[#0a0a0a] text-white py-20 px-6 text-center">
         <div className="w-[min(720px,100%-2.5rem)] mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold font-['Space_Grotesk'] mb-4">Interested in Speaking?</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Interested in Speaking?</h2>
           <p className="text-white/70 mb-8">
             Are you an MA alumnus working in AI or a researcher interested in visiting? We'd love to hear from you.
           </p>
