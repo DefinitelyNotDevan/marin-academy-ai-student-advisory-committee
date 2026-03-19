@@ -31,15 +31,15 @@ export function AuroraBackgroundDemo() {
         className="relative flex flex-col gap-4 items-center justify-center px-4 text-center"
       >
         {/* eyebrow */}
-        <span className="inline-flex items-center gap-2 rounded-full border border-red-600/30 bg-red-600/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-red-500">
-          <span className="h-2 w-2 rounded-full bg-red-500" />
+        <span className="inline-flex items-center gap-2 rounded-full border border-[#BE2828]/30 bg-[#BE2828]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#BE2828]">
+          <span className="h-2 w-2 rounded-full bg-[#BE2828]" />
           Spring 2026 Speaker Series
         </span>
 
         {/* headline */}
         <h1 className="text-4xl md:text-7xl font-bold dark:text-white">
           Students Exploring{" "}
-          <span className="bg-gradient-to-r from-red-500 to-red-400 bg-clip-text text-transparent">
+          <span style={{ background: "linear-gradient(to right, #BE2828, #e04444)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
             AI's Real Impact
           </span>
         </h1>
@@ -54,7 +54,7 @@ export function AuroraBackgroundDemo() {
         <div className="flex gap-3 mt-2 flex-wrap justify-center">
           <Link
             href="/speakers"
-            className="rounded-full bg-red-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-red-500 transition-colors"
+            className="rounded-full px-6 py-2.5 text-sm font-semibold text-white transition-colors" style={{ backgroundColor: "#BE2828" }}
           >
             View Speaker Series
           </Link>

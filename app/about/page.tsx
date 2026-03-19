@@ -6,7 +6,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="bg-[#0a0a0a] text-white py-20 px-6">
         <div className="w-[min(1140px,100%-2.5rem)] mx-auto">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-red-400 mb-4">
+          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#BE2828]/80 mb-4">
             Who We Are
           </span>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
@@ -25,12 +25,12 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 gap-12 items-start">
             {/* Left: text */}
             <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Our Purpose</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#BE2828]">Our Purpose</span>
               <h2 className="text-3xl md:text-4xl font-bold mt-3 mb-5">
                 Students Thinking Critically About AI
               </h2>
               <p className="text-gray-600 mb-4 leading-relaxed">
-                The AI Student Advisory Committee is made up of students in grades 9–12 at Marin Academy who are passionate
+                The AI Student Advisory Committee is made up of students at Marin Academy who are passionate
                 about understanding how artificial intelligence shapes our world — not just the technical side, but the
                 human, ethical, and social dimensions.
               </p>
@@ -64,7 +64,6 @@ export default function AboutPage() {
             <div className="bg-[#0a0a0a] text-white rounded-2xl p-6 divide-y divide-white/10">
               {[
                 { icon: "🏫", label: "School", value: "Marin Academy, San Rafael, CA" },
-                { icon: "🧑‍🎓", label: "Membership", value: "Open to students in grades 9–12" },
                 { icon: "📅", label: "Current Program", value: "Spring 2026 AI Speaker Series" },
                 { icon: "📍", label: "Speaker Series Location", value: "BBLC Lecture Hall · Lunch Block · 1–2 pm" },
                 { icon: "🎙️", label: "Speaker Types", value: "MA Alumni, UC Berkeley researchers, industry leaders, entrepreneurs" },
@@ -87,12 +86,12 @@ export default function AboutPage() {
       <section className="bg-gray-50 py-20 px-6">
         <div className="w-[min(1140px,100%-2.5rem)] mx-auto">
           <div className="text-center mb-12">
-            <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Our Work</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#BE2828]">Our Work</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-3">
               What the Committee Does
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              From organizing speaker events to advising on AI policy at MA, we work to make sure student voices are
+              From organizing speaker events to advising on AI at MA, we work to make sure student voices are
               part of the conversation.
             </p>
           </div>
@@ -101,10 +100,10 @@ export default function AboutPage() {
             {[
               { icon: "🎤", title: "Speaker Series", desc: "We organize a curated series of talks each semester, bringing in researchers, engineers, founders, and MA alumni to speak candidly about their work in AI — during lunch, open to all." },
               { icon: "💬", title: "Honest Conversations", desc: "We don't host panels designed to hype AI or bash it. We aim for candid, informed discussions that help students develop their own views — based on real information." },
-              { icon: "🔗", title: "Alumni Network", desc: "We've built relationships with MA alumni now working at Google DeepMind, OpenAI, Anthropic, NVIDIA, and beyond — and we invite them back to share what they've learned." },
               { icon: "📢", title: "Community Outreach", desc: "We announce events school-wide, coordinate with faculty, and work to make sure all students — regardless of technical background — feel welcome and included." },
               { icon: "🏛️", title: "Advisory Role", desc: "As an advisory committee, we aim to represent the student perspective in conversations about how AI is — and should be — used in our school community and educational environment." },
-              { icon: "🌍", title: "Planetary Justice Alliance", desc: "Several of our events are co-organized with the Planetary Justice Alliance at MA, connecting AI's impacts to broader questions of environmental and global justice." },
+              { icon: "🛠️", title: "Workshops & Events", desc: "We're building out hands-on programming beyond the speaker series — including student workshops and community events exploring AI tools, ethics, and real-world applications. Stay tuned." },
+              { icon: "🔬", title: "Student Research", desc: "We connect students with opportunities to explore AI more deeply — through independent projects, faculty collaboration, and connections to researchers doing work that matters." },
             ].map(({ icon, title, desc }) => (
               <div key={title} className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
                 <div className="text-3xl mb-3">{icon}</div>
@@ -120,7 +119,7 @@ export default function AboutPage() {
       <section className="py-20 px-6">
         <div className="w-[min(1140px,100%-2.5rem)] mx-auto">
           <div className="text-center mb-12">
-            <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Why It Matters</span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#BE2828]">Why It Matters</span>
             <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-3">
               The Questions We're Exploring
             </h2>
@@ -142,50 +141,6 @@ export default function AboutPage() {
                 <p className="text-white/60 text-sm leading-relaxed">{a}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Get Involved */}
-      <section className="bg-gray-50 py-20 px-6">
-        <div className="w-[min(720px,100%-2.5rem)] mx-auto">
-          <div className="text-center mb-10">
-            <span className="text-xs font-semibold uppercase tracking-widest text-red-600">Get Involved</span>
-            <h2 className="text-3xl font-bold mt-2 mb-3">Join the Conversation</h2>
-            <p className="text-gray-500">
-              Whether you want to attend a talk, join the committee, or propose a speaker — we want to hear from you.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-6">
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm text-center">
-              <div className="text-4xl mb-3">🎟️</div>
-              <h3 className="font-semibold text-[#111] mb-2">Attend a Talk</h3>
-              <p className="text-gray-500 text-sm mb-5">All student talks are free and open to all MA students and faculty during lunch.</p>
-              <Link href="/speakers" className="block w-full rounded-lg bg-[#0a0a0a] hover:bg-[#1a1a1a] text-white text-sm font-semibold py-2.5 text-center transition-colors">
-                See the Schedule
-              </Link>
-            </div>
-
-            <div className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm text-center">
-              <div className="text-4xl mb-3">✉️</div>
-              <h3 className="font-semibold text-[#111] mb-2">Connect With Us</h3>
-              <p className="text-gray-500 text-sm mb-5">Interested in joining the committee, proposing a speaker, or asking a question?</p>
-              <a
-                href="mailto:rmansfield@ma.org"
-                className="block w-full rounded-lg bg-red-600 hover:bg-red-500 text-white text-sm font-semibold py-2.5 text-center transition-colors"
-              >
-                Get in Touch
-              </a>
-            </div>
-          </div>
-
-          <div className="bg-red-50 border border-red-100 rounded-2xl p-5 text-center">
-            <p className="text-sm text-gray-600">
-              <strong className="text-[#111]">Are you an MA alumnus working in AI?</strong>
-              <br />
-              We'd love to have you share your experience with current MA students. Reach out — we're flexible on format and timing.
-            </p>
           </div>
         </div>
       </section>
