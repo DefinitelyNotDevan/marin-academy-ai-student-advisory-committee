@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import React from "react";
+import Link from "next/link";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 
 /**
@@ -51,18 +52,18 @@ export function AuroraBackgroundDemo() {
 
         {/* CTAs */}
         <div className="flex gap-3 mt-2 flex-wrap justify-center">
-          <a
+          <Link
             href="/speakers"
             className="rounded-full bg-red-600 px-6 py-2.5 text-sm font-semibold text-white hover:bg-red-500 transition-colors"
           >
             View Speaker Series
-          </a>
-          <a
+          </Link>
+          <Link
             href="/about"
             className="rounded-full border border-black/20 dark:border-white/20 px-6 py-2.5 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
           >
             About the Committee
-          </a>
+          </Link>
         </div>
       </motion.div>
     </AuroraBackground>
