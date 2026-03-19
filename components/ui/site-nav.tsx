@@ -19,11 +19,11 @@ export function SiteNav() {
         {/* Brand — MA logo */}
         <Link href="/" className="flex items-center gap-3 shrink-0">
           <Image
-            src="/images/ma-logo.png"
+            src="/images/ma-logo.svg"
             alt="Marin Academy"
-            width={120}
-            height={22}
-            className="h-[22px] w-auto object-contain brightness-0 invert"
+            width={44}
+            height={44}
+            className="h-[44px] w-[44px] object-contain"
             priority
           />
         </Link>
