@@ -18,15 +18,17 @@ export function SiteNav() {
     <nav className="sticky top-0 z-50 h-[72px] bg-[#0a0a0a] border-b border-white/10">
       <div className="w-[min(1140px,100%-2.5rem)] mx-auto h-full flex items-center justify-between gap-8">
         {/* Brand — MA logo */}
-        <Link href="/" className="flex items-center gap-3 shrink-0">
-          <Image
-            src={img("/images/ma-logo.svg")}
-            alt="Marin Academy"
-            width={44}
-            height={44}
-            className="h-[44px] w-[44px] object-contain"
-            priority
-          />
+        <Link href="/" className="flex items-center gap-2 shrink-0">
+          <div className="bg-white rounded-lg px-2 py-1 flex items-center justify-center">
+            <Image
+              src={img("/images/ma-logo.svg")}
+              alt="Marin Academy"
+              width={44}
+              height={44}
+              className="h-[44px] w-[44px] object-contain"
+              priority
+            />
+          </div>
         </Link>
 
         {/* Links */}

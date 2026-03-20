@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ContactButton } from "@/components/ui/contact-button";
+import { SpeakerCard } from "@/components/ui/speaker-card";
 import { img } from "@/lib/img-path";
 
 /* ─── Types ─────────────────────────────────────────────────── */
@@ -28,6 +28,7 @@ const speakers: Speaker[] = [
     affiliation: "UC Berkeley",
     topic: "AI & Environmental Impact",
     date: "February 19, 2026 · In Person",
+
     badge: "Completed",
     badgeVariant: "past",
     bio: "Michael is a graduate student at UC Berkeley's Goldman School of Public Policy and founder of Building A Sustainable Internet — the world's first undergraduate-taught course on sustainable digital infrastructure. He serves on the California Public Utilities Commission and has presented internationally on the hidden environmental costs of AI and the internet.",
@@ -143,59 +144,7 @@ export default function SpeakersPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {speakers.map((s) => (
-              <article
-                key={s.name}
-                className={`rounded-2xl border bg-white shadow-sm flex flex-col overflow-hidden transition-shadow hover:shadow-md ${
-                  s.highlight ? "border-yellow-300 shadow-yellow-100" : "border-gray-200"
-                }`}
-              >
-                {/* Card header */}
-                <div className="flex items-start gap-3 p-5 pb-0">
-                  {s.photo ? (
-                    <Image
-                      src={s.photo}
-                      alt={s.name}
-                      width={48}
-                      height={48}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-gray-100 shrink-0"
-                    />
-                  ) : (
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#BE2828] to-[#e04444] grid place-items-center text-white font-bold text-sm shrink-0">
-                      {s.initials}
-                    </div>
-                  )}
-                  <div className="min-w-0 flex-1">
-                    <div className="font-semibold text-[#111]">{s.name}</div>
-                    <div className="text-gray-500 text-xs">{s.affiliation}</div>
-                  </div>
-                  <span className={`text-[11px] font-semibold px-2.5 py-1 rounded-full shrink-0 ${badgeStyles[s.badgeVariant]}`}>
-                    {s.badge}
-                  </span>
-                </div>
-
-                {/* Body */}
-                <div className="p-5 flex flex-col gap-2 flex-1">
-                  <div className="flex items-center gap-1.5 text-gray-400 text-xs">
-                    <svg width="12" height="12" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                      <rect x="1" y="2" width="12" height="11" rx="2" stroke="currentColor" strokeWidth="1.5" />
-                      <path d="M1 5.5h12" stroke="currentColor" strokeWidth="1.5" />
-                      <path d="M4 1v2M10 1v2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                    </svg>
-                    {s.date}
-                  </div>
-                  <div className="text-[#BE2828] text-sm font-semibold">{s.topic}</div>
-                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-4">{s.bio}</p>
-                </div>
-
-                {/* Tags */}
-                <div className="px-5 pb-5 flex flex-wrap gap-1.5">
-                  {s.tags.map((t) => (
-                    <span key={t} className="text-[11px] bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </article>
+              <SpeakerCard key={s.name} s={s} />
             ))}
           </div>
         </div>

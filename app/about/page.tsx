@@ -43,21 +43,6 @@ export default function AboutPage() {
                 school, our community, and the world.
               </p>
 
-              {/* Pillars */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  { icon: "🔍", title: "Critical Inquiry", desc: "We ask hard questions about AI rather than accepting it at face value — exploring what it can and can't do, and who it serves." },
-                  { icon: "🌐", title: "Real-World Connections", desc: "We bring in practitioners and researchers who work with AI daily — not to lecture, but to have honest conversations." },
-                  { icon: "🤝", title: "Community Engagement", desc: "Our events are open to all students and faculty at Marin Academy — no background in tech required." },
-                  { icon: "📚", title: "Informed Perspective", desc: "We want MA students to enter college and careers with nuanced, grounded views on AI's role in society." },
-                ].map(({ icon, title, desc }) => (
-                  <div key={title} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-                    <div className="text-2xl mb-2">{icon}</div>
-                    <h3 className="font-semibold text-[#111] mb-1">{title}</h3>
-                    <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-                  </div>
-                ))}
-              </div>
             </div>
 
             {/* Right: info card */}
@@ -65,7 +50,7 @@ export default function AboutPage() {
               {[
                 { icon: "🏫", label: "School", value: "Marin Academy, San Rafael, CA" },
                 { icon: "📅", label: "Current Program", value: "Spring 2026 AI Speaker Series" },
-                { icon: "📍", label: "Speaker Series Location", value: "BBLC Lecture Hall · Lunch Block · 1–2 pm" },
+                { icon: "📍", label: "Speaker Series Location", value: "BBLC Lecture Hall · Lunch Block" },
                 { icon: "🎙️", label: "Speaker Types", value: "MA Alumni, UC Berkeley researchers, industry leaders, entrepreneurs" },
                 { icon: "🌱", label: "Topics We Explore", value: "Environmental impact · Social justice · Education · Policy · Careers · Ethics" },
               ].map(({ icon, label, value }) => (
@@ -78,6 +63,22 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Pillars — full-width 4-column row */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
+            {[
+              { icon: "🔍", title: "Critical Inquiry", desc: "We ask hard questions about AI rather than accepting it at face value — exploring what it can and can't do, and who it serves." },
+              { icon: "🌐", title: "Real-World Connections", desc: "We bring in practitioners and researchers who work with AI daily — not to lecture, but to have honest conversations." },
+              { icon: "🤝", title: "Community Engagement", desc: "Our events are open to all students and faculty at Marin Academy — no background in tech required." },
+              { icon: "📚", title: "Informed Perspective", desc: "We want MA students to enter college and careers with nuanced, grounded views on AI's role in society." },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
+                <div className="text-2xl mb-2">{icon}</div>
+                <h3 className="font-semibold text-[#111] mb-1">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
