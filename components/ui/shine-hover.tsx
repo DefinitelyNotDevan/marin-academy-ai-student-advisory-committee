@@ -21,7 +21,7 @@ export function ShineButton({ children, className, as: Tag = "button", href, ...
 
   if (href) {
     return (
-      <a href={href} className={cn(shineClass, className)}>
+      <a href={href} className={cn(shineClass, className)} style={(props as any).style}>
         {children}
       </a>
     );
