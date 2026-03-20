@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import Link from "next/link";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { ShineButton } from "@/components/ui/shine-hover";
 
 /**
  * AuroraBackgroundDemo
@@ -52,18 +53,21 @@ export function AuroraBackgroundDemo() {
 
         {/* CTAs */}
         <div className="flex gap-3 mt-2 flex-wrap justify-center">
-          <Link
+          <ShineButton
             href="/speakers"
-            className="rounded-full px-6 py-2.5 text-sm font-semibold text-white transition-colors" style={{ backgroundColor: "#BE2828" }}
+            as="a"
+            className="rounded-full px-6 py-2.5 text-sm font-semibold text-white transition-colors"
+            style={{ backgroundColor: "#BE2828" }}
           >
             View Speaker Series
-          </Link>
-          <Link
+          </ShineButton>
+          <ShineButton
             href="/about"
+            as="a"
             className="rounded-full border border-black/20 dark:border-white/20 px-6 py-2.5 text-sm font-semibold hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
           >
             About the Committee
-          </Link>
+          </ShineButton>
         </div>
       </motion.div>
     </AuroraBackground>

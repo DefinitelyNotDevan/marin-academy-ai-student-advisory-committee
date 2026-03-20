@@ -24,7 +24,7 @@ export function SiteNav() {
             alt="Marin Academy"
             width={44}
             height={44}
-            className="h-[44px] w-[44px] object-contain"
+            className="h-[44px] w-[44px] object-contain mix-blend-lighten"
             priority
           />
         </Link>
