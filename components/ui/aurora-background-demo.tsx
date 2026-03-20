@@ -4,7 +4,8 @@ import { motion } from "framer-motion";
 import React from "react";
 import Link from "next/link";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 /**
  * AuroraBackgroundDemo
@@ -53,16 +54,24 @@ export function AuroraBackgroundDemo() {
 
         {/* CTAs */}
         <div className="flex gap-3 mt-2 flex-wrap justify-center">
-          <InteractiveHoverButton
-            href="/speakers"
-            text="View Speaker Series"
-            className="px-6 py-2.5 text-sm text-white bg-[#BE2828] border-[#BE2828] hover:text-white"
-          />
-          <InteractiveHoverButton
-            href="/about"
-            text="About the Committee"
-            className="px-6 py-2.5 text-sm border-black/30 dark:border-white/30 dark:text-white"
-          />
+          <Button
+            variant="expandIcon"
+            Icon={() => <ArrowRight className="h-4 w-4" />}
+            iconPlacement="right"
+            asChild
+            className="group rounded-full px-6 py-2.5 text-sm bg-[#BE2828] hover:bg-[#a82323] border-0"
+          >
+            <Link href="/speakers">View Speaker Series</Link>
+          </Button>
+          <Button
+            variant="expandIcon"
+            Icon={() => <ArrowRight className="h-4 w-4" />}
+            iconPlacement="right"
+            asChild
+            className="group rounded-full px-6 py-2.5 text-sm bg-transparent text-current border border-black/30 dark:border-white/30 hover:bg-black/5 dark:hover:bg-white/10 dark:text-white"
+          >
+            <Link href="/about">About the Committee</Link>
+          </Button>
         </div>
       </motion.div>
     </AuroraBackground>

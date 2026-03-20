@@ -25,15 +25,19 @@ module.exports = {
       },
       animation: {
         aurora: "aurora 60s linear infinite",
+        shine: "shine 3s ease-out infinite",
       },
       keyframes: {
         aurora: {
           from: {
             backgroundPosition: "50% 50%, 50% 50%",
           },
-          to: {
-            backgroundPosition: "350% 50%, 350% 50%",
-          },
+          to: { backgroundPosition: "350% 50%, 350% 50%" },
+        },
+        shine: {
+          "0%":   { backgroundPosition: "200% 0" },
+          "25%":  { backgroundPosition: "-200% 0" },
+          "100%": { backgroundPosition: "-200% 0" },
         },
       },
     },
