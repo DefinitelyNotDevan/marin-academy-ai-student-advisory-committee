@@ -25,7 +25,7 @@ export function ContactWidget() {
       setTimeout(() => setError(false), 2000);
       return;
     }
-    const body = `Name: ${name}\nEmail: ${email}\n\n${message}`;
+    const body = message;
     const sub  = subject.trim() || "Message from MA AI Committee Website";
     window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(sub)}&body=${encodeURIComponent(body)}`;
     setSent(true);
