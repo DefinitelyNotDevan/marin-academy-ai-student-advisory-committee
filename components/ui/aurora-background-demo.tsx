@@ -56,16 +56,12 @@ export function AuroraBackgroundDemo() {
           <InteractiveHoverButton
             href="/speakers"
             text="View Speaker Series"
-            blobColor="#BE2828"
-            hoverTextColor="#ffffff"
-            className="px-6 py-2.5 text-sm text-white bg-[#BE2828] border-[#BE2828] min-w-[180px]"
+            className="px-6 py-2.5 text-sm text-white bg-[#BE2828] border-[#BE2828] hover:text-white"
           />
           <InteractiveHoverButton
             href="/about"
             text="About the Committee"
-            blobColor="#111111"
-            hoverTextColor="#ffffff"
-            className="px-6 py-2.5 text-sm border-black/30 dark:border-white/30 dark:text-white min-w-[190px]"
+            className="px-6 py-2.5 text-sm border-black/30 dark:border-white/30 dark:text-white"
           />
         </div>
       </motion.div>
