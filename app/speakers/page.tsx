@@ -1,3 +1,5 @@
+"use client";
+import { useMemo } from "react";
 import Link from "next/link";
 import { ContactButton } from "@/components/ui/contact-button";
 import { SpeakerCard } from "@/components/ui/speaker-card";
@@ -12,6 +14,8 @@ interface Speaker {
   affiliation: string;
   topic: string;
   date: string;
+  dateISO: string;
+  isAlum?: boolean;
   badge: string;
   badgeVariant: BadgeVariant;
   bio: string;
@@ -28,9 +32,8 @@ const speakers: Speaker[] = [
     affiliation: "UC Berkeley",
     topic: "AI & Environmental Impact",
     date: "February 19, 2026 · In Person",
-
-    badge: "Completed",
-    badgeVariant: "past",
+    dateISO: "2026-02-19",
+    badge: "Completed", badgeVariant: "past",
     bio: "Michael is a graduate student at UC Berkeley's Goldman School of Public Policy and founder of Building A Sustainable Internet — the world's first undergraduate-taught course on sustainable digital infrastructure. He serves on the California Public Utilities Commission and has presented internationally on the hidden environmental costs of AI and the internet.",
     tags: ["Energy & Data Centers", "Policy", "Sustainability"],
     photo: img("/images/michael-brand.png"),
@@ -41,8 +44,9 @@ const speakers: Speaker[] = [
     affiliation: "University of Cambridge",
     topic: "Conflict Minerals & AI Hardware",
     date: "March 9, 2026 · BBLC Lecture Hall",
-    badge: "Completed",
-    badgeVariant: "past",
+    dateISO: "2026-03-09",
+    isAlum: true,
+    badge: "Completed", badgeVariant: "past",
     bio: "A Marin Academy alumna beginning her Ph.D. at the University of Cambridge, Bella studies the intersection of conflict mineral supply chains and AI hardware infrastructure. Her work examines the community impacts of resource extraction on communities affected by the production of AI's physical components — an often invisible dimension of how AI is built.",
     tags: ["Supply Chains", "Global Justice", "MA Alum '20"],
     photo: img("/images/bella-raja.jpg"),
@@ -53,11 +57,10 @@ const speakers: Speaker[] = [
     affiliation: "UC Berkeley",
     topic: "Social Justice, Tech & Government",
     date: "March 26, 2026 · BBLC Lecture Hall",
-    badge: "Next Up",
-    badgeVariant: "next",
+    dateISO: "2026-03-26",
+    badge: "Completed", badgeVariant: "past",
     bio: "Lauren Chambers is a researcher at UC Berkeley whose work sits at the crossroads of technology, social justice, and government policy. Her research explores how AI and data systems interact with governance structures — and who benefits, and who is harmed, when these systems make decisions that affect people's lives.",
     tags: ["Social Justice", "Government & Policy", "Equity"],
-    highlight: true,
     photo: img("/images/lauren-chambers.jpg"),
   },
   {
@@ -66,8 +69,9 @@ const speakers: Speaker[] = [
     affiliation: "NVIDIA",
     topic: "From MA to NVIDIA: AI & Autonomous Vehicles",
     date: "April 23, 2026 · BBLC Lecture Hall",
-    badge: "MA Alum",
-    badgeVariant: "alumni",
+    dateISO: "2026-04-23",
+    isAlum: true,
+    badge: "Upcoming", badgeVariant: "upcoming",
     bio: "Michael graduated from Marin Academy in 2021 and went on to earn a B.S. in Applied Math–CS and an M.S. in Computer Science from Brown University. He's now a Software Engineer at NVIDIA specializing in simulation and model evaluation for autonomous vehicle development. He'll share the real path from MA to a career at the center of the AI revolution.",
     tags: ["Autonomous Vehicles", "Software Engineering", "MA Alum '21"],
     photo: img("/images/michael-lu.jpg"),
@@ -78,8 +82,8 @@ const speakers: Speaker[] = [
     affiliation: "Branch.co / Kiva.org",
     topic: "Machine Learning & Financial Inclusion",
     date: "April 30, 2026 · BBLC Lecture Hall",
-    badge: "Upcoming",
-    badgeVariant: "upcoming",
+    dateISO: "2026-04-30",
+    badge: "Upcoming", badgeVariant: "upcoming",
     bio: "Matt Flannery is the CEO and founder of Branch.co and co-founder of Kiva.org. Branch uses machine learning to assess creditworthiness via smartphone data, serving borrowers in India, Nigeria, and Kenya. He'll discuss how algorithmic lending works in practice, why transparency matters when AI makes financial decisions, and what 'fair' looks like in automated systems.",
     tags: ["FinTech", "Machine Learning", "Global Markets"],
     photo: img("/images/matt-flannery.jpg"),
@@ -90,24 +94,61 @@ const speakers: Speaker[] = [
     affiliation: "UCSF",
     topic: "Human-Centered AI in Science & Education",
     date: "May 15, 2026 · Virtual (Google Meet)",
-    badge: "MA Alum",
-    badgeVariant: "alumni",
+    dateISO: "2026-05-15",
+    isAlum: true,
+    badge: "Upcoming", badgeVariant: "upcoming",
     bio: "Ava is a product engineer and MA '20 alumna specializing in human-centered design and emerging technology. She holds a B.S./M.S. in Human Factors Engineering from Tufts University. As an Associate Product Manager at UCSF's Dyslexia Center, she leads a statewide platform for K–12 dyslexia screening and intervention — using AI to make neuroscience research accessible to classrooms across California.",
     tags: ["Human-Centered Design", "AI in Education", "MA Alum '20"],
     photo: img("/images/ava-iannuccillo.jpg"),
   },
 ];
 
-/* ─── Badge styles ───────────────────────────────────────────── */
-const badgeStyles: Record<BadgeVariant, string> = {
-  past:     "bg-gray-100 text-gray-500",
-  next:     "bg-yellow-100 text-yellow-700 ring-1 ring-yellow-300",
-  upcoming: "bg-blue-50 text-blue-700",
-  alumni:   "bg-red-50 text-[#BE2828]",
-};
+/* ─── Dynamic badge computation ─────────────────────────────── */
+function computeSpeakers(raw: Speaker[]): Speaker[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  // Find the first speaker who hasn't spoken yet
+  const sorted = [...raw].sort(
+    (a, b) => new Date(a.dateISO).getTime() - new Date(b.dateISO).getTime(),
+  );
+  const next = sorted.find((s) => {
+    const d = new Date(s.dateISO);
+    d.setHours(0, 0, 0, 0);
+    return d >= today;
+  });
+
+  return raw.map((s) => {
+    const d = new Date(s.dateISO);
+    d.setHours(0, 0, 0, 0);
+    const isPast = d < today;
+    const isNext = next?.dateISO === s.dateISO;
+
+    let badge: string;
+    let badgeVariant: BadgeVariant;
+
+    if (isPast) {
+      badge = "Completed";
+      badgeVariant = "past";
+    } else if (isNext) {
+      badge = "Next Up";
+      badgeVariant = "next";
+    } else if (s.isAlum) {
+      badge = "MA Alum";
+      badgeVariant = "alumni";
+    } else {
+      badge = "Upcoming";
+      badgeVariant = "upcoming";
+    }
+
+    return { ...s, badge, badgeVariant, highlight: isNext };
+  });
+}
 
 /* ─── Page ───────────────────────────────────────────────────── */
 export default function SpeakersPage() {
+  const computed = useMemo(() => computeSpeakers(speakers), []);
+
   return (
     <>
       {/* Hero */}
@@ -143,7 +184,7 @@ export default function SpeakersPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {speakers.map((s) => (
+            {computed.map((s) => (
               <SpeakerCard key={s.name} s={s} />
             ))}
           </div>
