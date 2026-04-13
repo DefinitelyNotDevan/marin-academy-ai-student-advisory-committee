@@ -1,5 +1,5 @@
 "use client";
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { ContactButton } from "@/components/ui/contact-button";
 import { SpeakerCard } from "@/components/ui/speaker-card";
@@ -147,7 +147,8 @@ function computeSpeakers(raw: Speaker[]): Speaker[] {
 
 /* ─── Page ───────────────────────────────────────────────────── */
 export default function SpeakersPage() {
-  const computed = useMemo(() => computeSpeakers(speakers), []);
+  const [computed, setComputed] = useState<Speaker[]>(speakers);
+  useEffect(() => { setComputed(computeSpeakers(speakers)); }, []);
 
   return (
     <>
