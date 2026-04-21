@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export function SiteFooter() {
   return (
     <footer className="bg-[#0a0a0a] text-white border-t border-white/8 py-8">
@@ -14,19 +12,6 @@ export function SiteFooter() {
             <div className="text-white/50 text-xs">Marin Academy · Spring 2026</div>
           </div>
         </div>
-
-        {/* Nav */}
-        <nav className="flex gap-6">
-          {[
-            { href: "/",         label: "Home" },
-            { href: "/speakers", label: "Speakers" },
-            { href: "/about",    label: "About" },
-          ].map(({ href, label }) => (
-            <Link key={href} href={href} className="text-white/60 hover:text-white text-sm transition-colors">
-              {label}
-            </Link>
-          ))}
-        </nav>
 
         <p className="text-white/40 text-xs">
           © 2026 Marin Academy AI Student Advisory Committee

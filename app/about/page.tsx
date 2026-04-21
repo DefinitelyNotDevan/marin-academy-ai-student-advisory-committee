@@ -42,39 +42,34 @@ export default function AboutPage() {
                 Our work focuses on moving past the hype and headlines to engage with AI's real implications: for our
                 school, our community, and the world.
               </p>
-
             </div>
 
             {/* Right: info card */}
             <div className="bg-[#0a0a0a] text-white rounded-2xl p-6 divide-y divide-white/10">
               {[
-                { icon: "🏫", label: "School", value: "Marin Academy, San Rafael, CA" },
-                { icon: "📅", label: "Current Program", value: "Spring 2026 AI Speaker Series" },
-                { icon: "📍", label: "Speaker Series Location", value: "BBLC Lecture Hall · Lunch Block" },
-                { icon: "🎙️", label: "Speaker Types", value: "MA Alumni, UC Berkeley researchers, industry leaders, entrepreneurs" },
-                { icon: "🌱", label: "Topics We Explore", value: "Environmental impact · Social justice · Education · Policy · Careers · Ethics" },
-              ].map(({ icon, label, value }) => (
-                <div key={label} className="flex gap-4 py-4 first:pt-0 last:pb-0">
-                  <span className="text-xl shrink-0">{icon}</span>
-                  <div>
-                    <div className="text-white/50 text-xs font-medium mb-0.5">{label}</div>
-                    <div className="text-white text-sm">{value}</div>
-                  </div>
+                { label: "School",                  value: "Marin Academy, San Rafael, CA" },
+                { label: "Current Program",          value: "Spring 2026 AI Speaker Series" },
+                { label: "Speaker Series Location",  value: "BBLC Lecture Hall · Lunch Block" },
+                { label: "Speaker Types",            value: "MA Alumni, UC Berkeley researchers, industry leaders, entrepreneurs" },
+                { label: "Topics We Explore",        value: "Environmental impact · Social justice · Education · Policy · Careers · Ethics" },
+              ].map(({ label, value }) => (
+                <div key={label} className="py-4 first:pt-0 last:pb-0">
+                  <div className="text-white/50 text-xs font-medium mb-0.5">{label}</div>
+                  <div className="text-white text-sm">{value}</div>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Pillars — full-width 4-column row */}
+          {/* Pillars */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
             {[
-              { icon: "🔍", title: "Critical Inquiry", desc: "We ask hard questions about AI rather than accepting it at face value — exploring what it can and can't do, and who it serves." },
-              { icon: "🌐", title: "Real-World Connections", desc: "We bring in practitioners and researchers who work with AI daily — not to lecture, but to have honest conversations." },
-              { icon: "🤝", title: "Community Engagement", desc: "Our events are open to all students and faculty at Marin Academy — no background in tech required." },
-              { icon: "📚", title: "Informed Perspective", desc: "We want MA students to enter college and careers with nuanced, grounded views on AI's role in society." },
-            ].map(({ icon, title, desc }) => (
+              { title: "Critical Inquiry",        desc: "We ask hard questions about AI rather than accepting it at face value — exploring what it can and can't do, and who it serves." },
+              { title: "Real-World Connections",  desc: "We bring in practitioners and researchers who work with AI daily — not to lecture, but to have honest conversations." },
+              { title: "Community Engagement",    desc: "Our events are open to all students and faculty at Marin Academy — no background in tech required." },
+              { title: "Informed Perspective",    desc: "We want MA students to enter college and careers with nuanced, grounded views on AI's role in society." },
+            ].map(({ title, desc }) => (
               <div key={title} className="rounded-xl border border-gray-200 bg-white p-4 shadow-sm">
-                <div className="text-2xl mb-2">{icon}</div>
                 <h3 className="font-semibold text-[#111] mb-1">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -99,15 +94,14 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
-              { icon: "🎤", title: "Speaker Series", desc: "We organize a curated series of talks each semester, bringing in researchers, engineers, founders, and MA alumni to speak candidly about their work in AI — during lunch, open to all." },
-              { icon: "💬", title: "Honest Conversations", desc: "We don't host panels designed to hype AI or bash it. We aim for candid, informed discussions that help students develop their own views — based on real information." },
-              { icon: "📢", title: "Community Outreach", desc: "We announce events school-wide, coordinate with faculty, and work to make sure all students — regardless of technical background — feel welcome and included." },
-              { icon: "🏛️", title: "Advisory Role", desc: "As an advisory committee, we aim to represent the student perspective in conversations about how AI is — and should be — used in our school community and educational environment." },
-              { icon: "🛠️", title: "Workshops & Events", desc: "We're building out hands-on programming beyond the speaker series — including student workshops and community events exploring AI tools, ethics, and real-world applications. Stay tuned." },
-              { icon: "🔬", title: "Student Research", desc: "We connect students with opportunities to explore AI more deeply — through independent projects, faculty collaboration, and connections to researchers doing work that matters." },
-            ].map(({ icon, title, desc }) => (
+              { title: "Speaker Series",      desc: "We organize a curated series of talks each semester, bringing in researchers, engineers, founders, and MA alumni to speak candidly about their work in AI — during lunch, open to all." },
+              { title: "Honest Conversations",desc: "We don't host panels designed to hype AI or bash it. We aim for candid, informed discussions that help students develop their own views — based on real information." },
+              { title: "Community Outreach",  desc: "We announce events school-wide, coordinate with faculty, and work to make sure all students — regardless of technical background — feel welcome and included." },
+              { title: "Advisory Role",       desc: "As an advisory committee, we aim to represent the student perspective in conversations about how AI is — and should be — used in our school community and educational environment." },
+              { title: "Workshops & Events",  desc: "We're building out hands-on programming beyond the speaker series — including student workshops and community events exploring AI tools, ethics, and real-world applications. Stay tuned." },
+              { title: "Student Research",    desc: "We connect students with opportunities to explore AI more deeply — through independent projects, faculty collaboration, and connections to researchers doing work that matters." },
+            ].map(({ title, desc }) => (
               <div key={title} className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm">
-                <div className="text-3xl mb-3">{icon}</div>
                 <h3 className="font-semibold text-[#111] mb-2">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -131,13 +125,12 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {[
-              { icon: "🌏", q: "What does it cost to build AI?", a: "The minerals in AI chips come from somewhere. The power that runs data centers has to come from somewhere. What are the real environmental and human costs behind AI infrastructure?" },
-              { icon: "⚖️", q: "Who does AI serve — and who does it harm?", a: "AI systems make decisions that affect people's lives. Who designs them? Who benefits? And what happens when they go wrong in communities without power to push back?" },
-              { icon: "🎓", q: "What does a career in AI actually look like?", a: "Not the stock-option dream — the real day-to-day. What skills matter? What's exciting? What's frustrating? What should students be learning right now?" },
-              { icon: "💡", q: "Can AI be a force for good?", a: "From detecting dyslexia in K–12 students to expanding financial access in emerging markets — what does responsible, human-centered AI actually look like in practice?" },
-            ].map(({ icon, q, a }) => (
+              { q: "What does it cost to build AI?",          a: "The minerals in AI chips come from somewhere. The power that runs data centers has to come from somewhere. What are the real environmental and human costs behind AI infrastructure?" },
+              { q: "Who does AI serve — and who does it harm?", a: "AI systems make decisions that affect people's lives. Who designs them? Who benefits? And what happens when they go wrong in communities without power to push back?" },
+              { q: "What does a career in AI actually look like?", a: "Not the stock-option dream — the real day-to-day. What skills matter? What's exciting? What's frustrating? What should students be learning right now?" },
+              { q: "Can AI be a force for good?",              a: "From detecting dyslexia in K–12 students to expanding financial access in emerging markets — what does responsible, human-centered AI actually look like in practice?" },
+            ].map(({ q, a }) => (
               <div key={q} className="bg-[#0a0a0a] rounded-2xl p-6 text-white">
-                <div className="text-2xl mb-3">{icon}</div>
                 <h3 className="font-semibold text-white mb-2 text-base">{q}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{a}</p>
               </div>
