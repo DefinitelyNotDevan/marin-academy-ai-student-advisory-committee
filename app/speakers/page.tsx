@@ -68,7 +68,7 @@ const speakers: Speaker[] = [
     name: "Michael Lu '21",
     affiliation: "NVIDIA",
     topic: "From MA to NVIDIA: AI & Autonomous Vehicles",
-    date: "April 23, 2026 · BBLC Lecture Hall",
+    date: "April 23, 2026 · Founders Lecture Hall",
     dateISO: "2026-04-23",
     isAlum: true,
     badge: "Upcoming", badgeVariant: "upcoming",
