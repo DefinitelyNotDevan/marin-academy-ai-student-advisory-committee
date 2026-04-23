@@ -104,24 +104,37 @@ const speakers: Speaker[] = [
 ];
 
 /* ─── Dynamic badge computation ─────────────────────────────── */
-function computeSpeakers(raw: Speaker[]): Speaker[] {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
 
-  // Find the first speaker who hasn't spoken yet
+// Parse YYYY-MM-DD as local midnight (not UTC) to avoid timezone off-by-one
+function localDate(iso: string): Date {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(y, m - 1, d);
+}
+
+const TALK_END_HOUR = 14; // talks end by 2 pm
+
+function computeSpeakers(raw: Speaker[]): Speaker[] {
+  const now = new Date();
+  const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const currentHour = now.getHours() + now.getMinutes() / 60;
+
+  // Find the first speaker whose talk hasn't finished yet
   const sorted = [...raw].sort(
-    (a, b) => new Date(a.dateISO).getTime() - new Date(b.dateISO).getTime(),
+    (a, b) => localDate(a.dateISO).getTime() - localDate(b.dateISO).getTime(),
   );
   const next = sorted.find((s) => {
-    const d = new Date(s.dateISO);
-    d.setHours(0, 0, 0, 0);
-    return d >= today;
+    const d = localDate(s.dateISO);
+    const isTalkDay = d.getTime() === todayMidnight.getTime();
+    // Still counts as upcoming if it's talk day before 2 pm
+    if (isTalkDay) return currentHour < TALK_END_HOUR;
+    return d > todayMidnight;
   });
 
   return raw.map((s) => {
-    const d = new Date(s.dateISO);
-    d.setHours(0, 0, 0, 0);
-    const isPast = d < today;
+    const d = localDate(s.dateISO);
+    const isTalkDay = d.getTime() === todayMidnight.getTime();
+    // Completed = in the past, OR it's talk day and past 2 pm
+    const isPast = d < todayMidnight || (isTalkDay && currentHour >= TALK_END_HOUR);
     const isNext = next?.dateISO === s.dateISO;
 
     let badge: string;

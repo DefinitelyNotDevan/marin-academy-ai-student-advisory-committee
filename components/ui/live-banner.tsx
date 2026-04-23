@@ -8,13 +8,14 @@ interface Speaker {
 }
 
 export function LiveBanner({ speakers }: { speakers: Speaker[] }) {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const now = new Date();
+  const todayMidnight = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const currentHour = now.getHours() + now.getMinutes() / 60;
 
   const liveSpeaker = speakers.find((s) => {
-    const d = new Date(s.dateISO);
-    d.setHours(0, 0, 0, 0);
-    return d.getTime() === today.getTime();
+    const [y, m, d] = s.dateISO.split("-").map(Number);
+    const speakerDay = new Date(y, m - 1, d);
+    return speakerDay.getTime() === todayMidnight.getTime() && currentHour < 14;
   });
 
   if (!liveSpeaker) return null;
