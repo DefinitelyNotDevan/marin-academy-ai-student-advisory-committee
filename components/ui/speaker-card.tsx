@@ -2,7 +2,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-type BadgeVariant = "past" | "next" | "upcoming" | "alumni";
+type BadgeVariant = "past" | "next" | "today" | "upcoming" | "alumni";
 
 interface Speaker {
   initials: string;
@@ -21,6 +21,7 @@ interface Speaker {
 const badgeStyles: Record<BadgeVariant, string> = {
   past:     "bg-gray-100 text-gray-500",
   next:     "bg-yellow-100 text-yellow-700 ring-1 ring-yellow-300",
+  today:    "bg-[#BE2828] text-white ring-1 ring-[#BE2828]",
   upcoming: "bg-blue-50 text-blue-700",
   alumni:   "bg-red-50 text-[#BE2828]",
 };
@@ -32,7 +33,7 @@ export function SpeakerCard({ s }: { s: Speaker }) {
     <article
       onClick={() => setExpanded((e) => !e)}
       className={`rounded-2xl border bg-white shadow-sm flex flex-col overflow-hidden transition-all cursor-pointer hover:shadow-md ${
-        s.highlight ? "border-yellow-300 shadow-yellow-100" : "border-gray-200"
+        s.highlight ? "border-[#BE2828] shadow-red-100" : "border-gray-200"
       }`}
     >
       {/* Card header */}

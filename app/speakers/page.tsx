@@ -6,7 +6,7 @@ import { SpeakerCard } from "@/components/ui/speaker-card";
 import { img } from "@/lib/img-path";
 
 /* ─── Types ─────────────────────────────────────────────────── */
-type BadgeVariant = "past" | "next" | "upcoming" | "alumni";
+type BadgeVariant = "past" | "next" | "today" | "upcoming" | "alumni";
 
 interface Speaker {
   initials: string;
@@ -143,6 +143,9 @@ function computeSpeakers(raw: Speaker[]): Speaker[] {
     if (isPast) {
       badge = "Completed";
       badgeVariant = "past";
+    } else if (isNext && isTalkDay) {
+      badge = "Today";
+      badgeVariant = "today";
     } else if (isNext) {
       badge = "Next Up";
       badgeVariant = "next";
