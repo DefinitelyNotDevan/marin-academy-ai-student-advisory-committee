@@ -171,9 +171,14 @@ export default function SpeakersPage() {
       {/* Hero */}
       <section className="bg-[#0a0a0a] text-white py-20 px-6">
         <div className="w-[min(1140px,100%-2.5rem)] mx-auto">
-          <span className="inline-block text-xs font-semibold uppercase tracking-widest text-[#BE2828]/80 mb-4">
-            Spring 2026
-          </span>
+          <div className="flex items-center gap-3 mb-4">
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#BE2828]/80">
+              Spring 2026
+            </span>
+            <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-white/10 text-white/50 uppercase tracking-widest">
+              Archived
+            </span>
+          </div>
           <h1 className="text-4xl md:text-6xl font-bold mb-4">
             AI Speaker Series
           </h1>

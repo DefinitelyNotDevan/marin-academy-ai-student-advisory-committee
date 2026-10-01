@@ -8,6 +8,7 @@ import { img } from "@/lib/img-path";
 const links = [
   { href: "/",         label: "Home" },
   { href: "/speakers", label: "Speaker Series" },
+  { href: "/ask",      label: "Ask the Committee" },
   { href: "/about",    label: "About" },
 ];
 
