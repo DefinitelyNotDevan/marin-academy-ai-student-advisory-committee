@@ -68,7 +68,7 @@ export function AuroraBackgroundDemo() {
             Icon={() => <ArrowRight className="h-4 w-4" />}
             iconPlacement="right"
             asChild
-            className="group rounded-full px-6 py-2.5 text-sm bg-transparent text-current border border-black/30 dark:border-white/30 hover:bg-black/5 dark:hover:bg-white/10 dark:text-white"
+            className="group rounded-full px-6 py-2.5 text-sm text-white bg-[#0a0a0a] hover:bg-[#222] border-0"
           >
             <Link href="/ask">Ask the Committee</Link>
           </Button>
