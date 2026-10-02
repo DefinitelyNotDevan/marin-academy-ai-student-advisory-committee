@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { SiteNav }       from "@/components/ui/site-nav";
-import { SiteFooter }    from "@/components/ui/site-footer";
 import { ContactWidget } from "@/components/ui/contact-widget";
 import { LiveBanner }    from "@/components/ui/live-banner";
 
@@ -27,7 +26,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LiveBanner speakers={speakerDates} />
         <SiteNav />
         <main>{children}</main>
-        <SiteFooter />
         <ContactWidget />
       </body>
     </html>
