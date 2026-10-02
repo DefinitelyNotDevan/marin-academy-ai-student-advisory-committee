@@ -35,7 +35,7 @@ export function AuroraBackgroundDemo() {
         {/* eyebrow */}
         <span className="inline-flex items-center gap-2 rounded-full border border-[#BE2828]/30 bg-[#BE2828]/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-[#BE2828]">
           <span className="h-2 w-2 rounded-full bg-[#BE2828]" />
-          Spring 2026 Speaker Series
+          Fall 2026 Speaker Series
         </span>
 
         {/* headline */}
