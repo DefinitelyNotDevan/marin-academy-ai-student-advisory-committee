@@ -189,6 +189,20 @@ export default function SpeakersPage() {
         </div>
       </section>
 
+      {/* Fall 2026 teaser */}
+      <section className="border-b border-gray-100 bg-gray-50 py-10 px-6">
+        <div className="w-[min(1140px,100%-2.5rem)] mx-auto flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-widest text-[#BE2828]">Coming Soon</span>
+            <h2 className="text-xl font-bold mt-1">Fall 2026 Speaker Series</h2>
+            <p className="text-gray-500 text-sm mt-1">Speakers and dates to be announced. Check back soon.</p>
+          </div>
+          <span className="shrink-0 text-xs font-semibold px-3 py-1.5 rounded-full bg-yellow-50 text-yellow-700 ring-1 ring-yellow-200">
+            TBD
+          </span>
+        </div>
+      </section>
+
       {/* Speaker Cards */}
       <section className="py-20 px-6">
         <div className="w-[min(1140px,100%-2.5rem)] mx-auto">

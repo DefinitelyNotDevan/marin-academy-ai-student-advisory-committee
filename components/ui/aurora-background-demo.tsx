@@ -70,6 +70,15 @@ export function AuroraBackgroundDemo() {
             asChild
             className="group rounded-full px-6 py-2.5 text-sm bg-transparent text-current border border-black/30 dark:border-white/30 hover:bg-black/5 dark:hover:bg-white/10 dark:text-white"
           >
+            <Link href="/ask">Ask the Committee</Link>
+          </Button>
+          <Button
+            variant="expandIcon"
+            Icon={() => <ArrowRight className="h-4 w-4" />}
+            iconPlacement="right"
+            asChild
+            className="group rounded-full px-6 py-2.5 text-sm bg-transparent text-current border border-black/30 dark:border-white/30 hover:bg-black/5 dark:hover:bg-white/10 dark:text-white"
+          >
             <Link href="/about">About the Committee</Link>
           </Button>
         </div>
